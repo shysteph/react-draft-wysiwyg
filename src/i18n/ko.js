@@ -1,4 +1,4 @@
-module.exports = {
+export default ({
 
   // Generic
   'generic.add': '입력',
@@ -78,4 +78,4 @@ module.exports = {
   'components.controls.textalign.center': '중앙',
   'components.controls.textalign.right': '오른쪽',
   'components.controls.textalign.justify': '양쪽',
-};
+});

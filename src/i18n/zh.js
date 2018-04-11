@@ -1,4 +1,4 @@
-module.exports = {
+export default ({
 
   // Generic
   'generic.add': '添加',
@@ -78,4 +78,4 @@ module.exports = {
   'components.controls.textalign.center': '居中',
   'components.controls.textalign.right': '文本右对齐',
   'components.controls.textalign.justify': '两端对齐',
-};
+});

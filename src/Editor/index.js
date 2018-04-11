@@ -35,9 +35,9 @@ import getBlockRenderFunc from "../renderer";
 import defaultToolbar from "../config/defaultToolbar";
 import localeTranslations from "../i18n";
 import "./styles.css";
-import "../../css/Draft.css";
+import "../css/Draft.css";
 
-export default class WysiwygEditor extends Component {
+class WysiwygEditor extends Component {
   static propTypes = {
     onChange: PropTypes.func,
     onEditorStateChange: PropTypes.func,
@@ -269,6 +269,20 @@ export default class WysiwygEditor extends Component {
         showOpenOptionOnHover: this.state.toolbar.link.showOpenOptionOnHover
       })
     ];
+    if(this.props.decorators && this.props.decorators.creators) {
+      for(let creator of this.props.decorators.creators) {
+        decorators.push(
+          ...creator({
+            ...this.props.decorators.params,
+            onChange: this.onChange,
+            getEditorState: this.getEditorState,
+            getSuggestions: this.getSuggestions,
+            getWrapperRef: this.getWrapperRef,
+            modalHandler: this.modalHandler
+          })
+        );
+      }
+    }
     if (this.props.mention) {
       decorators.push(
         ...getMentionDecorators({
@@ -552,3 +566,4 @@ export default class WysiwygEditor extends Component {
 }
 // todo: evaluate draftjs-utils to move some methods here
 // todo: move color near font-family
+export default WysiwygEditor;

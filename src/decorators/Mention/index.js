@@ -5,5 +5,4 @@ const getDecorators = config => [
   (new Mention(config.mentionClassName)).getMentionDecorator(),
   (new Suggestion(config)).getSuggestionDecorator(),
 ];
-
-module.exports = getDecorators;
+export default getDecorators;
