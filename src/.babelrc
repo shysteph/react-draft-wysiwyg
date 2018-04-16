@@ -1,9 +1,16 @@
 {
   "presets": [
-    ["env", {modules: false}],
-
     "react",
+    ["env", {modules: false}],
     "stage-2",
   ],
-  "plugins": ["external-helpers"],
+  "plugins": [
+    "transform-runtime",
+    ["transform-imports", {
+      "lodash": {
+        "transform": "lodash/${member}",
+        "preventFullImport": true,
+      }
+    }],
+  ],
 }

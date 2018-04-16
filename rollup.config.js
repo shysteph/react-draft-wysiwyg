@@ -18,12 +18,12 @@ const babelRc = {
 };
 
 export default {
-  input: 'src/module.js',
+  input: 'src/index.js',
   external: external,
   output: {
     name: 'reactDraftWysiwyg',
-    dir: 'dist',
-    format: 'es',
+    file: pkg.main,
+    format: 'umd',
     sourcemap: true,
   },
   plugins: [
@@ -31,10 +31,11 @@ export default {
       extensions: ['.css'],
       extract: true,
     }),
-    //resolve({
-      //extensions: ['.js'],
-    //}),
+    resolve({
+      extensions: ['.js'],
+    }),
+    commonjs(),
     babel(babelRc),
-    //visualizer(),
+    visualizer(),
   ]
 };

@@ -9,6 +9,8 @@ interfaces
 scripts
 stories
 node_modules
+src
+dist
 .babelrc
 .eslintignore
 .eslintrc

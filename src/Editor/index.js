@@ -278,7 +278,12 @@ class WysiwygEditor extends Component {
             getEditorState: this.getEditorState,
             getSuggestions: this.getSuggestions,
             getWrapperRef: this.getWrapperRef,
-            modalHandler: this.modalHandler
+            handlers: {
+              modal: this.modalHandler,
+              focus: this.focusHandler,
+              suggestion: SuggestionHandler,
+              keyDown: KeyDownHandler,
+            }
           })
         );
       }

@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "react",
+    ["env", {
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "flow",
+    "stage-2",
+  ],
+  "plugins": [
+    "transform-react-jsx-self",
+    "transform-react-jsx-source",
+  ],
+}
