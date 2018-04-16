@@ -10,7 +10,7 @@ var external = Object.keys(Object.assign({}, pkg.dependencies, pkg.peerDependenc
 
 module.exports = {
   devtool: 'source-map',
-  externals: external ,
+  externals: external,
   entry: [
     './src/index.js'
   ],
